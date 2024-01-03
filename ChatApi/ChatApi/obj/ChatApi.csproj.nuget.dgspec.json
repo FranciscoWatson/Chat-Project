@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Franchu\\source\\repos\\ChatApi\\ChatApi\\ChatApi.csproj": {}
+    "C:\\Users\\ferna\\Documents\\ProyectoChat\\Chat-Project\\ChatApi\\ChatApi\\ChatApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Franchu\\source\\repos\\ChatApi\\ChatApi\\ChatApi.csproj": {
+    "C:\\Users\\ferna\\Documents\\ProyectoChat\\Chat-Project\\ChatApi\\ChatApi\\ChatApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Franchu\\source\\repos\\ChatApi\\ChatApi\\ChatApi.csproj",
+        "projectUniqueName": "C:\\Users\\ferna\\Documents\\ProyectoChat\\Chat-Project\\ChatApi\\ChatApi\\ChatApi.csproj",
         "projectName": "ChatApi",
-        "projectPath": "C:\\Users\\Franchu\\source\\repos\\ChatApi\\ChatApi\\ChatApi.csproj",
-        "packagesPath": "C:\\Users\\Franchu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Franchu\\source\\repos\\ChatApi\\ChatApi\\obj\\",
+        "projectPath": "C:\\Users\\ferna\\Documents\\ProyectoChat\\Chat-Project\\ChatApi\\ChatApi\\ChatApi.csproj",
+        "packagesPath": "C:\\Users\\ferna\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ferna\\Documents\\ProyectoChat\\Chat-Project\\ChatApi\\ChatApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Franchu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ferna\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -64,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
