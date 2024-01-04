@@ -6,7 +6,7 @@ namespace ChatApi.Data
     public class Message
     {
         [Key]
-        [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid messageId { get; set; }
         [ForeignKey("Chat")]
         public Guid chatId { get; set; }

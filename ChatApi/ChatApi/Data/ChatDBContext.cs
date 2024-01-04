@@ -4,7 +4,9 @@ namespace ChatApi.Data
 {
     public class ChatDBContext : DbContext
     {
-
+        public ChatDBContext(DbContextOptions<ChatDBContext> options) : base(options)
+        {
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
