@@ -20,9 +20,15 @@ namespace ChatApi.Data
             }
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<UserChat>()
+                .HasKey(c => new { c.userId, c.chatId });
+        }
+
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserChat> UsersChats { get; set; }
         public DbSet<Chat> Chats { get; set;}
-        public DbSet<User> Users { get; set;}
-        //public DbSet<ChatMessage> ChatMessages { get; set;}
         public DbSet<Message> Messages { get; set;}
 
     }

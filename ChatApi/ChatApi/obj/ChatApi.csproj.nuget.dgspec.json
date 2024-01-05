@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ferna\\Documents\\ProyectoChat\\Chat-Project\\ChatApi\\ChatApi\\ChatApi.csproj": {}
+    "C:\\Users\\Franchu\\source\\repos\\Proyecto-Chat\\ChatApi\\ChatApi\\ChatApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ferna\\Documents\\ProyectoChat\\Chat-Project\\ChatApi\\ChatApi\\ChatApi.csproj": {
+    "C:\\Users\\Franchu\\source\\repos\\Proyecto-Chat\\ChatApi\\ChatApi\\ChatApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ferna\\Documents\\ProyectoChat\\Chat-Project\\ChatApi\\ChatApi\\ChatApi.csproj",
+        "projectUniqueName": "C:\\Users\\Franchu\\source\\repos\\Proyecto-Chat\\ChatApi\\ChatApi\\ChatApi.csproj",
         "projectName": "ChatApi",
-        "projectPath": "C:\\Users\\ferna\\Documents\\ProyectoChat\\Chat-Project\\ChatApi\\ChatApi\\ChatApi.csproj",
-        "packagesPath": "C:\\Users\\ferna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ferna\\Documents\\ProyectoChat\\Chat-Project\\ChatApi\\ChatApi\\obj\\",
+        "projectPath": "C:\\Users\\Franchu\\source\\repos\\Proyecto-Chat\\ChatApi\\ChatApi\\ChatApi.csproj",
+        "packagesPath": "C:\\Users\\Franchu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Franchu\\source\\repos\\Proyecto-Chat\\ChatApi\\ChatApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ferna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Franchu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

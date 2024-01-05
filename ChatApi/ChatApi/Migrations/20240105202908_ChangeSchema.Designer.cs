@@ -4,6 +4,7 @@ using ChatApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChatApi.Migrations
 {
     [DbContext(typeof(ChatDBContext))]
-    partial class ChatDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240105202908_ChangeSchema")]
+    partial class ChangeSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,9 +58,6 @@ namespace ChatApi.Migrations
 
                     b.Property<DateTime>("sentDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<Guid>("userId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("messageId");
 

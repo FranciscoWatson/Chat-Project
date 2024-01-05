@@ -88,5 +88,19 @@ namespace ChatApi.Controllers
             return Ok(oUser);
         }
 
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Route("DeleteUserById")]
+        public IActionResult DeleteUserById(Guid userId)
+        {
+            User user = _userRepo.GetUser(userId);
+            if (user == null) return NotFound();
+            _userRepo.DeleteUser(user);
+            return Ok(user);
+        }
+
+
     }
 }

@@ -7,12 +7,13 @@ namespace ChatApi.Data
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid ChatId { get; set; }
+        public Guid chatId { get; set; }
 
-        [ForeignKey("User")]
-        public Guid originUserId { get; set; }
-        [ForeignKey("User")]
-        public Guid recipientUserId { get; set; }
+      //  [ForeignKey("User")]
+      //  public Guid originUserId { get; set; }
+      //  [ForeignKey("User")]
+      //  public Guid recipientUserId { get; set; }
+        public string chatName { get; set; }
 
     }
 }
