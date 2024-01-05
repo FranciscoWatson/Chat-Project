@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ChatApi.Data
 {
@@ -7,6 +8,7 @@ namespace ChatApi.Data
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [JsonIgnore]
         public Guid messageId { get; set; }
         [ForeignKey("Chat")]
         public Guid chatId { get; set; }
