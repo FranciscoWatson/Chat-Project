@@ -175,3 +175,5 @@ C:\Users\Franchu\source\repos\Proyecto-Chat\ChatApi\ChatApi\obj\Debug\net6.0\Cha
 C:\Users\Franchu\source\repos\Proyecto-Chat\ChatApi\ChatApi\obj\Debug\net6.0\ref\ChatApi.dll
 C:\Users\Franchu\source\repos\Proyecto-Chat\ChatApi\ChatApi\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Franchu\source\repos\Proyecto-Chat\ChatApi\ChatApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ferna\Documents\ProyectoChat\Chat-Project\ChatApi\ChatApi\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\ferna\Documents\ProyectoChat\Chat-Project\ChatApi\ChatApi\bin\Debug\net6.0\Newtonsoft.Json.dll

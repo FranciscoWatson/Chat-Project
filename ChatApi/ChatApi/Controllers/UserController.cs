@@ -1,4 +1,5 @@
 ﻿using ChatApi.Data;
+using ChatApi.Repository.IRepositry;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Xml.XPath;
@@ -9,65 +10,82 @@ namespace ChatApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        public readonly ChatDBContext _dbContext;
-        public UserController(ChatDBContext dbContext)
+        private readonly IUserRepository _userRepo;
+        
+        public UserController(IUserRepository userRepo)
         {
-            _dbContext = dbContext;
+            _userRepo = userRepo;
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Route("GetUsers")]
+        public IActionResult GetUsers()
+        {
+            var usersList = _userRepo.GetUsers();
+            return Ok(usersList);
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [Route("CreateUser")]
         public IActionResult CreateUser([FromBody] User user)
         {
-            try
-            {
-                _dbContext.Users.Add(user);
-                _dbContext.SaveChanges();
+            if (_userRepo.UserExists(user.email)) return BadRequest(user);
 
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok" });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = ex.Message });
-            }
+            _userRepo.CreateUser(user);
+            return Ok(user);
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Route("GetUserByID")]
         public IActionResult GetUserById(Guid userId) 
         {
-            User user = _dbContext.Users.Find(userId);
-            if (user == null)
-            {
-                return BadRequest("User not found");
-            }
-            try
-            {
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = user });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = ex.Message, response = user });
-            }
+           User user = _userRepo.GetUser(userId);
+
+           if (user == null) return NotFound();
+
+           return Ok(user);
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Route("GetUserByEmail")]
         public IActionResult GetUserByEmail(string userEmail)
         {
-            User user = _dbContext.Users.FirstOrDefault(u => u.email == userEmail);
-            if (user == null)
-            {
-                return BadRequest("User not found");
-            }
-            try
-            {
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = user });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = ex.Message, response = user });
-            }
+            User user = _userRepo.GetUser(userEmail);
+
+            if (user == null) return NotFound();
+
+            return Ok(user);
+        }
+
+        [HttpPatch]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Route("EditUserById")]
+        public IActionResult EditUserById(Guid userId, [FromBody] User user)
+        {
+            if(user == null ) return BadRequest();
+  
+            User oUser = _userRepo.GetUser(userId);
+            if (oUser == null) return NotFound();
+
+            oUser.userId = userId;
+            oUser.email = user.email != null ? user.email : oUser.email;
+            oUser.password = user.password != null ? user.password : oUser.password;
+            oUser.name = user.name != null ? user.name : oUser.name;
+            _userRepo.EditUser(oUser);
+
+            return Ok(oUser);
         }
 
     }
