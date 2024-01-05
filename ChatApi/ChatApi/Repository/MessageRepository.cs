@@ -13,7 +13,6 @@ namespace ChatApi.Repository
 
         public bool CreateMessage(Message message)
         {
-            _db.Users.
             _db.Messages.Add(message);
             return Save();
         }
