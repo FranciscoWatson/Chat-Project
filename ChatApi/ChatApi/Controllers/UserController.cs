@@ -3,9 +3,11 @@ using ChatApi.Repository.IRepositry;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Xml.XPath;
+using Microsoft.AspNetCore.Cors;
 
 namespace ChatApi.Controllers
 {
+    [EnableCors("CorsRules")]
     [Route("api/[Controller]")]
     [ApiController]
     public class UserController : ControllerBase
