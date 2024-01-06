@@ -36,5 +36,51 @@ namespace ChatApi.Controllers
             _messageRepo.CreateMessage(message);
             return Ok(message);
         }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Route("GetMessegeById")]
+        public IActionResult GetMessegeById(Guid messageId)
+        {
+            Message message = _messageRepo.GetMessage(messageId);
+
+            if (message == null) return NotFound();
+
+            return Ok(message);
+        }
+
+        [HttpPatch]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Route("EditMessageContent")]
+        public IActionResult EditMessageContent(Guid messageId, string newContent)
+        {
+
+            if (newContent == null) return BadRequest();
+
+            Message message = _messageRepo.GetMessage(messageId);
+
+            if (message == null) return NotFound();
+
+            message.content = newContent;
+            _messageRepo.EditMessage(message);
+
+            return Ok(message);
+        }
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Route("DeleteMessageById")]
+        public IActionResult DeleteMessageById(Guid messageId)
+        {
+            Message message = _messageRepo.GetMessage(messageId);
+            if (message == null) return NotFound();
+            _messageRepo.DeleteMessage(message);
+            return Ok(message);
+        }
     }
 }

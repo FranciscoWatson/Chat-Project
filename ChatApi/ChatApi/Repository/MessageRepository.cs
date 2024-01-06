@@ -25,10 +25,28 @@ namespace ChatApi.Repository
         {
             return _db.Messages.ToList();
         }
+        public bool DeleteMessage(Message message)
+        {
+            _db.Messages.Remove(message);
+            return Save();
+        }
+
+        public bool EditMessage(Message message)
+        {
+            _db.Messages.Update(message);
+            return Save();
+        }
+
+        public bool MessageExist(Guid id)
+        {
+            return (_db.Messages.Any(m => m.messageId == id));
+        }
 
         public bool Save()
         {
             return _db.SaveChanges() >= 0;
         }
+
+
     }
 }
