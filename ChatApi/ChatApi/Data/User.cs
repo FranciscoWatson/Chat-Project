@@ -8,7 +8,6 @@ namespace ChatApi.Data
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [JsonIgnore]
         public Guid userId {  get; set; }
         public string name { get; set; }
         public string email { get; set; }

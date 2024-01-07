@@ -13,7 +13,7 @@ builder.Services.AddDbContext<ChatDBContext>(opt => opt.UseSqlServer(builder.Con
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IChatRepository, ChatRepository>();
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
-
+builder.Services.AddScoped<IAuthServiceRepository, AuthServiceRepository>();
 
 // Add services to the container.
 builder.Services.AddControllers();
