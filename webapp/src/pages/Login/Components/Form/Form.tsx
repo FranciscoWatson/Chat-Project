@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Input = () => {
+import "./Form.scss";
+
+import InputComponent from "../Input/InputComponent";
+
+const Form = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -45,30 +49,26 @@ const Input = () => {
       };
 
     return(
-        <div>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="email">User:</label>
-            <input
-              type="text"
-              id="email"
-              value={email}
-              onChange={handleUsernameChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={handlePasswordChange}
-            />
-          </div>
-          <button type="submit">Log in</button>
+        <div className="container w-100">
+        <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center">
+          <InputComponent
+             type="text" 
+             id="email"
+             value={email}
+             onChange={handleUsernameChange}
+             placeholder="Email"             
+          />
+          <InputComponent
+            type="text" 
+            id="password"
+            value={password}
+            onChange={handlePasswordChange}
+            placeholder="Password"
+          />
+          <button className="btn btn-primary  rounded w-100 mb-2 mt-2" style={{backgroundColor: '#004EB8', color:'white', height:'50px'}} type="submit">Log in</button>
         </form>
       </div>
     );
 };
 
-export default Input;
+export default Form;

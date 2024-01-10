@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import 'bootstrap/scss/bootstrap.scss'
+
 import App from './pages/App/App';
 
 const rootElement = document.getElementById('root');
