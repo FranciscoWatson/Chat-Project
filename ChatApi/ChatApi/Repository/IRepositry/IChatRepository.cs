@@ -1,11 +1,13 @@
 ﻿using ChatApi.Data;
+using ChatApi.DTOs;
 
 namespace ChatApi.Repository.IRepositry
 {
     public interface IChatRepository
     {
         ICollection<Chat> GetChats();
-        bool CreateChat(Chat chat);
+        public ICollection<Chat> GetChat(Guid id);
+        public bool CreateChat(ChatCreationDto chatDto);
         bool Save();
     }
 }

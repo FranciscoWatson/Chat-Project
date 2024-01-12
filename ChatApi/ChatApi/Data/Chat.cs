@@ -8,7 +8,6 @@ namespace ChatApi.Data
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [JsonIgnore]
         public Guid chatId { get; set; }
 
       //  [ForeignKey("User")]

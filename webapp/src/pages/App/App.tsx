@@ -1,18 +1,18 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Chat from '../HomePage/Chat';
-import Login from '../Login/Login';
+import Login from "../Login/Login";
 import "./App.scss";
+import Homepage from "../Homepage/Homepage";
 
-const App = () =>{
-    return (
-        <Router>
-          <Routes>
-            <Route path="/homePage" element={<Chat />} />
-            <Route path="/" element={<Login />} />
-          </Routes>
-        </Router>
-      );
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/homePage" element={<Homepage />} />
+        <Route path="/" element={<Login />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;

@@ -11,5 +11,7 @@ namespace ChatApi.Repository.IRepositry
         bool EditMessage(Message message);
         bool DeleteMessage(Message message);
         bool Save();
+
+        public ICollection<Message> GetMessages(Guid chatId);
     }
 }

@@ -1,0 +1,30 @@
+.header {
+    background-color: #ffffff; 
+    color: #333333; 
+    padding: 12px 20px; 
+    text-align: center;
+    font-size: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  .error-msg {
+    color: #ff5050;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .chat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+  }
+  
+  .chat-btn {
+    background-color: #4f9aff; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }

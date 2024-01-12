@@ -1,3 +1,4 @@
-import Chat from "./Chat";
+import Homepage from "./Homepage";
 
-export default Chat;
+
+export default Homepage;
