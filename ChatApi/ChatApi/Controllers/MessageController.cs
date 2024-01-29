@@ -1,11 +1,13 @@
 ﻿using ChatApi.Data;
 using ChatApi.Repository.IRepositry;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChatApi.Controllers
 {
+    [EnableCors("CorsRules")]
     [Route("api/[controller]")]
     [ApiController]
     public class MessageController : ControllerBase
@@ -81,6 +83,17 @@ namespace ChatApi.Controllers
             if (message == null) return NotFound();
             _messageRepo.DeleteMessage(message);
             return Ok(message);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Route("GetMessagesByChatId")]
+        public IActionResult GetMessagesByChatId(Guid chatId)
+        {
+            var messagesList = _messageRepo.GetMessages(chatId);
+            return Ok(messagesList);
         }
     }
 }

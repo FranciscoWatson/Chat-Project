@@ -1,11 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/scss/bootstrap.scss";
+import App from "./pages/App/App";
 
-import 'bootstrap/scss/bootstrap.scss'
-
-import App from './pages/App/App';
-
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 
 if (!rootElement) {
   throw new Error("Element with id 'root' not found");
@@ -18,4 +17,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-

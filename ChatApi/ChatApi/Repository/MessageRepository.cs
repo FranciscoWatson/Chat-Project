@@ -47,6 +47,12 @@ namespace ChatApi.Repository
             return _db.SaveChanges() >= 0;
         }
 
+        public ICollection<Message> GetMessages(Guid chatId)
+        {
+
+            return _db.Messages.Where(m => m.chatId == chatId).ToList();
+        }
+
 
     }
 }
